@@ -1,0 +1,33 @@
+.section {
+  padding: 6rem 1.5rem;
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.sectionSubtitle {
+  color: #a3a3a3;
+  margin: 0 0 3rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

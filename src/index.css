@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #050505;
+  --text-color: #ffffff;
+  --primary-red: #ef4444;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; 
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

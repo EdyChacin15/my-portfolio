@@ -1,0 +1,28 @@
+.section {
+  padding: 6rem 1.5rem;
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 0 0 2rem 0;
+}
+
+.text {
+  color: #d4d4d4;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.highlight {
+  color: var(--primary-red);
+  font-weight: 500;
+}
