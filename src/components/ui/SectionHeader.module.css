@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  color: #a3a3a3;
+  margin: 0;
+}

@@ -1,5 +1,12 @@
 import { skillsData } from '../../data/index.ts';
+import Badge from '../ui/Badge';
 import styles from './Skills.module.css';
+
+const colorMap: Record<string, 'blue' | 'green' | 'yellow' | 'gray'> = {
+  'Frontend': 'blue',
+  'Backend': 'green',
+  'Database & Tools': 'yellow',
+};
 
 const Skills = () => {
   return (
@@ -16,9 +23,9 @@ const Skills = () => {
               </h3>
               <div className={styles.skillsList}>
                 {category.skills.map((skill) => (
-                  <span key={skill} className={styles.skillBadge}>
+                  <Badge key={skill} color={colorMap[category.title] || 'gray'}>
                     {skill}
-                  </span>
+                  </Badge>
                 ))}
               </div>
             </div>

@@ -1,6 +1,7 @@
 import { Award, Trophy, BookOpen } from "lucide-react";
 import { certificatesData } from '../../data/index.ts';
 import styles from './Certificates.module.css';
+import SectionHeader from '../ui/SectionHeader';
 
 const getIcon = (type: string) => {
   switch (type) {
@@ -14,8 +15,10 @@ const Certificates = () => {
   return (
     <section id="certificates" className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Certificates & Achievements</h2>
-        <p className={styles.subtitle}>Continuous learning and competitive programming history.</p>
+        <SectionHeader 
+          title="Certificates & Achievements" 
+          subtitle="Continuous learning and competitive programming history." 
+        />
 
         <div className={styles.grid}>
           {certificatesData.map((cert, index) => {

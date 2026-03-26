@@ -3,13 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-color); /* Asegura el fondo oscuro */
+  background-color: var(--bg-color);
 }
 
 .content {
   max-width: 48rem;
-  /* --- ESTA ES LA CLAVE PARA EL TEXTO --- */
-  text-align: center; /* Centra el h1, h2 y p internamente */
+  text-align: center;
 }
 
 .greeting {
@@ -26,7 +25,7 @@
   font-weight: bold;
   margin: 0 0 1rem 0;
   color: var(--text-color);
-  line-height: 1.1; /* Un poco más compacto */
+  line-height: 1.1;
 }
 
 .subtitle {
@@ -41,7 +40,7 @@
   line-height: 1.6;
   max-width: 36rem;
   color: #d4d4d4;
-  margin: 0 auto 2.5rem auto; /* margin: 0 auto centrará el bloque de párrafo de 36rem */
+  margin: 0 auto 2.5rem auto;
 }
 
 .highlight {
@@ -52,8 +51,7 @@
 .buttons {
   display: flex;
   gap: 1rem;
-  /* --- ESTA ES LA CLAVE PARA LOS BOTONES --- */
-  justify-content: center; /* Centra los botones dentro del div */
+  justify-content: center;
 }
 
 .btnPrimary {

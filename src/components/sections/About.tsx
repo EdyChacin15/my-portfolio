@@ -1,10 +1,14 @@
 import styles from './About.module.css';
+import SectionHeader from '../ui/SectionHeader';
 
 const About = () => {
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>About Me</h2>
+        <SectionHeader 
+          title="About Me" 
+          subtitle="A little bit about me and my journey as a developer." 
+        />
         <p className={styles.text}>
           I am a Software Engineering student in my 11th trimester at URBE, based in Maracaibo, Venezuela. I have a strong passion for web development and creating applications that solve real-world problems.
         </p>
