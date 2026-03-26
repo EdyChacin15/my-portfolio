@@ -1,42 +1,7 @@
 import { Award, Trophy, BookOpen } from "lucide-react";
+import { certificatesData } from '../../data/index.ts';
 import styles from './Certificates.module.css';
 
-const certificates = [
-  // --- Diplomas de Platzi (Quitamos Java) ---
-  {
-    title: "Backend con Node.js: API REST con Express.js",
-    provider: "Platzi",
-    year: "2025",
-    link: "https://platzi.com/@edychacin15/",
-    type: "course"
-  },
-  
-  // --- NUEVO: Certificados de Maratones (Participación) ---
-  {
-    title: "URBE Programming Marathon Participation",
-    provider: "URBE University",
-    year: "2025",
-    link: "https://link-a-tu-certificado-maraton-2025.com",
-    type: "trophy"
-  },
-  {
-    title: "URBE Programming Marathon Participation",
-    provider: "URBE University",
-    year: "2024",
-    link: "https://link-a-tu-certificado-maraton-2024.com",
-    type: "trophy"
-  },
-
-  // --- Otros (CEVAZ sigue siendo relevante) ---
-  {
-    title: "English Program Scholarship",
-    provider: "CEVAZ",
-    year: "2024 - Present",
-    type: "book"
-  }
-];
-
-// Función auxiliar para elegir el icono según el tipo de certificado
 const getIcon = (type: string) => {
   switch (type) {
     case 'course': return <BookOpen size={20} />;
@@ -53,7 +18,7 @@ const Certificates = () => {
         <p className={styles.subtitle}>Continuous learning and competitive programming history.</p>
 
         <div className={styles.grid}>
-          {certificates.map((cert, index) => {
+          {certificatesData.map((cert, index) => {
             const CardContent = (
               <>
                 <div className={styles.iconWrapper}>
@@ -70,7 +35,6 @@ const Certificates = () => {
               </>
             );
 
-            // Si tiene link, es una tarjeta clickeable (<a>)
             return cert.link ? (
               <a 
                 key={index} 
@@ -82,7 +46,6 @@ const Certificates = () => {
                 {CardContent}
               </a>
             ) : (
-              // Si no tiene link, es un div estático
               <div key={index} className={styles.certCard}>
                 {CardContent}
               </div>

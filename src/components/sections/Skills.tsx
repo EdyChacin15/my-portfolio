@@ -1,19 +1,5 @@
+import { skillsData } from '../../data/index.ts';
 import styles from './Skills.module.css';
-
-const skillCategories = [
-  {
-    title: "Frontend & Design",
-    skills: ["JavaScript", "React", "HTML/CSS", "Figma", "Photoshop"],
-  },
-  {
-    title: "Backend & Core",
-    skills: ["Node.js", "Express", "Python", "Java", "REST APIs"],
-  },
-  {
-    title: "Tools & Management",
-    skills: ["Git", "GitHub", "Project Management", "UI/UX"],
-  },
-];
 
 const Skills = () => {
   return (
@@ -23,7 +9,7 @@ const Skills = () => {
         <p className={styles.subtitle}>Technologies and tools I work with.</p>
 
         <div className={styles.grid}>
-          {skillCategories.map((category) => (
+          {skillsData.map((category) => (
             <div key={category.title}>
               <h3 className={styles.categoryTitle}>
                 {category.title}
