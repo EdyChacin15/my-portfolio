@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
+import { useActiveSection } from '../../hooks/useActiveSection';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,8 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  const activeSection = useActiveSection(['projects', 'skills', 'about', 'certificates', 'contact']);
 
   return (
     <header className={styles.header}>
@@ -29,11 +32,41 @@ const Navbar = () => {
         </button>
 
         <ul className={`${styles.linkList} ${isOpen ? styles.isOpen : ''}`}>
-          <li><a href="#projects" className={styles.link} onClick={closeMenu}>Projects</a></li>
-          <li><a href="#skills" className={styles.link} onClick={closeMenu}>Skills</a></li>
-          <li><a href="#about" className={styles.link} onClick={closeMenu}>About</a></li>
-          <li><a href="#certificates" className={styles.link} onClick={closeMenu}>Certificates</a></li>
-          <li><a href="#contact" className={styles.link} onClick={closeMenu}>Contact</a></li>
+          <li>
+            <a 
+              href="#projects" 
+              className={`${styles.link} ${activeSection === 'projects' ? styles.active : ''}`} 
+              onClick={closeMenu}
+            > Projects </a>
+          </li>
+          <li>
+            <a 
+              href="#skills" 
+              className={`${styles.link} ${activeSection === 'skills' ? styles.active : ''}`} 
+              onClick={closeMenu}
+            > Skills </a>
+          </li>
+          <li>
+            <a 
+              href="#about" 
+              className={`${styles.link} ${activeSection === 'about' ? styles.active : ''}`} 
+              onClick={closeMenu}
+            > About </a>
+          </li>
+          <li>
+            <a 
+              href="#certificates" 
+              className={`${styles.link} ${activeSection === 'certificates' ? styles.active : ''}`} 
+              onClick={closeMenu}
+            > Certificates </a>
+          </li>
+          <li>
+            <a 
+              href="#contact" 
+              className={`${styles.link} ${activeSection === 'contact' ? styles.active : ''}`} 
+              onClick={closeMenu}
+            > Contact </a>
+          </li>
         </ul>
       </nav>
     </header>
