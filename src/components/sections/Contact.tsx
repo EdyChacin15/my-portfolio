@@ -40,10 +40,9 @@ const Contact = () => {
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Get In Touch</h2>
+        <h2 className={styles.title}>Contact</h2>
         <p className={styles.subtitle}>
-          I'm currently looking for new opportunities and my inbox is always open. 
-          Fill out the form below and I'll get back to you as soon as possible.
+          Send me a message and I will reply as soon as possible.
         </p>
 
         <form ref={formRef} onSubmit={sendEmail} className={styles.form}>
@@ -55,7 +54,7 @@ const Contact = () => {
               id="user_name" 
               className={styles.input} 
               required 
-              placeholder="John Doe"
+              placeholder="Your name"
             />
           </div>
 
@@ -67,7 +66,7 @@ const Contact = () => {
               id="user_email" 
               className={styles.input} 
               required 
-              placeholder="john@example.com"
+              placeholder="Your email"
             />
           </div>
 
@@ -78,7 +77,7 @@ const Contact = () => {
               id="message" 
               className={styles.textarea} 
               required 
-              placeholder="Hello! I'd like to discuss a project..."
+              placeholder="Your message"
             />
           </div>
 
@@ -89,13 +88,13 @@ const Contact = () => {
 
         {status === 'success' && (
           <div className={`${styles.statusMessage} ${styles.success}`}>
-            Message sent successfully! I'll be in touch soon.
+            Message sent successfully.
           </div>
         )}
 
         {status === 'error' && (
           <div className={`${styles.statusMessage} ${styles.error}`}>
-            Oops! Something went wrong. Please try again later.
+            Failed to send message. Please try again.
           </div>
         )}
 

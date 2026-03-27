@@ -1,60 +1,59 @@
 import type { ProjectType, SkillCategoryType, CertificateType } from '../types/index.ts';
-
 export const projectsData: ProjectType[] = [
   {
     title: "Personal Portfolio Web App",
-    description: "A responsive and interactive personal portfolio built from scratch. Designed with a focus on clean architecture and UI/UX best practices, featuring custom React hooks, CSS Modules for scoped styling, and dynamic staggered animations.",
+    description: "[2026] Interactive personal portfolio website. Built with React, TypeScript, and CSS Modules for the interface. It uses EmailJS to handle the contact form.",
     tags: ["React", "TypeScript", "Vite", "CSS Modules"],
     image: "/projects/portfolio.jpg",
     github: "https://github.com/edychacin15/my-portfolio",
-    // demo: "https://tu-enlace-de-vercel.vercel.app/" // Puedes descomentar esta línea y poner el link cuando lo subas
+    demo: "https://portfolio-edymar-chacin.vercel.app/"
+  },
+  {
+    title: "Spiderverse Web Platform",
+    description: "[2026] Collaborative web platform about the Spider-Man universe. Co-developed using React 19, Tailwind CSS, and Supabase.",
+    tags: ["React", "JavaScript", "Tailwind CSS", "Supabase"],
+    image: "/projects/spider.jpg",
+    github: "https://github.com/Enma0101/Spiderverse_page",
+    demo: "https://comicsspider.vercel.app/"
   },
   {
     title: "Custom Music Player",
-    description: "A fully functional web-based music player built with Vanilla JavaScript and the HTML5 Audio API. It features dynamic track switching, real-time progress tracking, custom UI controls (shuffle, repeat), and interactive playlist management.",
-    tags: ["JavaScript", "HTML5 Audio", "CSS3", "DOM Manipulation"],
+    description: "[2024] Custom web-based music player developed with Vanilla JavaScript and the HTML5 Audio API. It includes track switching, a progress bar, and playlist controls.",
+    tags: ["JavaScript", "HTML5 Audio", "CSS3"],
     image: "/projects/music-player.jpg", 
     github: "https://github.com/edychacin15/music-player",
     demo: "https://music-player-nu-pearl.vercel.app/"
   },
   {
     title: "Pokédex Web App",
-    description: "A Single Page Application (SPA) built with Vanilla JavaScript that consumes the PokéAPI. It features asynchronous data fetching using Axios, dynamic DOM manipulation, advanced filtering by Pokémon type, and numerical search capabilities.",
+    description: "[2024] Single Page Application that displays Pokémon data from the PokéAPI. Built with Vanilla JavaScript and Axios for data fetching.",
     tags: ["JavaScript", "REST API", "HTML/CSS", "Axios"],
     image: "/projects/pokedex.jpg",
     github: "https://github.com/edychacin15/pokedex",
     demo: "https://pokedex-weld-kappa.vercel.app/"
   },
   {
-    title: "Academic Management System",
-    description: "A full-stack platform for educational institutions to manage user roles, course enrollments, and billing. Features include debt tracking, installment payments, and automated PDF report generation.",
-    tags: ["Node.js", "Express", "MySQL", "JavaScript"],
-    image: "/projects/centro-educativo.jpg",
-    github: "https://github.com/edychacin15/centro-educativo-c",
-    demo: "https://centro-educativo-c.vercel.app/home.html"
-  },
-  {
-    title: "Spiderverse Web Platform",
-    description: "A collaborative full-stack application dedicated to the Spider-Man universe. Co-developed using React 19 and Tailwind CSS, featuring interactive 3D elements with Three.js, smooth UI transitions via Framer Motion, and robust backend data management powered by Supabase.",
-    tags: ["React", "JavaScript", "Tailwind CSS", "Supabase", "Three.js"],
-    image: "/projects/spider.jpg",
-    github: "https://github.com/Enma0101/Spiderverse_page",
-    demo: "https://comicsspider.vercel.app/"
-  },
-  {
     title: "Lexical & Syntactic Analyzer",
-    description: "A desktop text editor integrated with a custom compiler frontend. Built with Java Swing, it features multi-tab management, a lexical analyzer generated with JFlex for token identification, and a syntactic analyzer built with Java CUP for grammar validation.",
+    description: "[2025] Desktop text editor and compiler frontend. Built in Java using Swing. It uses JFlex for lexical analysis and Java CUP for syntactic validation.",
     tags: ["Java", "Swing", "JFlex", "Java CUP"],
     image: "/projects/editor.jpg",
     github: "https://github.com/edychacin15/analizador-lexico-sintactico",
   },
   {
     title: "Competitive Programming Algorithms",
-    description: "A collection of algorithmic solutions developed in Java for the URBE Programming Marathons. The repository demonstrates problem-solving skills under time constraints, implementing efficient data structures, and handling file I/O for automated test case validation.",
+    description: "[2025] Collection of Java algorithms for the URBE Programming Marathons.",
     tags: ["Java", "Algorithms", "Data Structures", "Problem Solving"],
     image: "/projects/java.jpg",
     github: "https://github.com/edychacin15/maraton-urbe",
-  }
+  }, 
+  {
+    title: "Academic Management System",
+    description: "[2024] System for educational management. It handles user roles, enrollments, and billing. Built with Node.js, Express, MySQL, and JavaScript. It also generates PDF reports.",
+    tags: ["Node.js", "Express", "MySQL", "JavaScript"],
+    image: "/projects/centro-educativo.jpg",
+    github: "https://github.com/edychacin15/centro-educativo-c",
+    demo: "https://centro-educativo-c.vercel.app/home.html"
+  },
 ];
 
 export const skillsData: SkillCategoryType[] = [
@@ -100,11 +99,12 @@ export const certificatesData: CertificateType[] = [
   {
     title: "URBE Programming Marathons",
     provider: "URBE University",
-    year: "2025",
+    year: "2024-2025",
     images: [
       "/certificates/maraton-nov-2025-1.jpg",
       "/certificates/maraton-jul-2025-1.jpg",
-      "/certificates/maraton-mar-2025-1.jpg"
+      "/certificates/maraton-mar-2025-1.jpg",
+      "/certificates/maraton-2024.jpg"
     ],
     type: "trophy"
   },
