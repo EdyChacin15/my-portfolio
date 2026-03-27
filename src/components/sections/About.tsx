@@ -17,17 +17,15 @@ const About = () => {
 
           <div className={styles.textContainer}>
             <p className={styles.paragraph}>
-              Hello! I'm Edymar, a Software Engineering student in my 11th trimester at URBE. 
-              My passion lies in solving logic problems and building efficient software solutions. 
-              I find joy in the process of turning complex ideas into practical, user-friendly applications.
+              I am a Software Engineering student in my 11th trimester at URBE. 
+              I focus on building software applications that are practical and solve everyday problems.
             </p>
             <p className={styles.paragraph}>
-              My current focus is on <span className={styles.highlight}>full-stack web development</span> using React.js and Node.js. 
-              Currently, I am developing a project management platform for my degree thesis.
+              My main area of work is <span className={styles.highlight}>web development</span>. Currently, I am building a project management platform for my degree thesis, connecting a PostgreSQL RDBMS with a React.js interface.
             </p>
             <p className={styles.paragraph}>
-              I believe in continuous learning and enjoy testing my logic in competitive programming marathons.
-              When I'm not coding, I'm usually improving my English skills or exploring new technologies.
+              I also participate in university programming marathons to keep my logic skills sharp.
+              Beyond coding, I am actively improving my English, as I consider constant learning essential to adapt to new technologies.
             </p>
           </div>
         </div>

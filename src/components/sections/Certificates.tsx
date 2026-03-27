@@ -1,17 +1,15 @@
-import { Award, Trophy, BookOpen } from "lucide-react";
+// src/components/sections/Certificates.tsx
+import { useState } from 'react';
 import { certificatesData } from '../../data/index.ts';
-import styles from './Certificates.module.css';
 import SectionHeader from '../ui/SectionHeader';
-
-const getIcon = (type: string) => {
-  switch (type) {
-    case 'course': return <BookOpen size={20} />;
-    case 'trophy': return <Trophy size={20} />;
-    default: return <Award size={20} />;
-  }
-};
+import CertificateCard from '../ui/CertificateCard';
+import ImageModal from '../ui/ImageModal';
+import styles from './Certificates.module.css';
 
 const Certificates = () => {
+  // 1. Ahora el estado guarda un objeto con el array y el índice inicial
+  const [selectedGallery, setSelectedGallery] = useState<{ images: string[]; index: number } | null>(null);
+
   return (
     <section id="certificates" className={styles.section}>
       <div className={styles.container}>
@@ -21,41 +19,26 @@ const Certificates = () => {
         />
 
         <div className={styles.grid}>
-          {certificatesData.map((cert, index) => {
-            const CardContent = (
-              <>
-                <div className={styles.iconWrapper}>
-                  {getIcon(cert.type)}
-                </div>
-                <div className={styles.certContent}>
-                  <h3 className={styles.certTitle}>
-                    {cert.title}
-                  </h3>
-                  <p className={styles.certDetails}>
-                    {cert.provider} · {cert.year}
-                  </p>
-                </div>
-              </>
-            );
-
-            return cert.link ? (
-              <a 
-                key={index} 
-                href={cert.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.certCard}
-              >
-                {CardContent}
-              </a>
-            ) : (
-              <div key={index} className={styles.certCard}>
-                {CardContent}
-              </div>
-            );
-          })}
+          {certificatesData.map((cert, index) => (
+            <CertificateCard 
+              key={index} 
+              cert={cert} 
+              // 2. Al hacer clic, pasamos el array de imágenes y el índice 0 (primera foto)
+              onImageClick={(_url) => setSelectedGallery({ images: cert.images!, index: 0 })} 
+            />
+          ))}
         </div>
       </div>
+
+      {/* 3. Renderizamos el Modal con los nuevos datos de galería */}
+      {selectedGallery && (
+        <ImageModal 
+          imageUrls={selectedGallery.images} 
+          startIndex={selectedGallery.index} 
+          altText="Certificate Full View" 
+          onClose={() => setSelectedGallery(null)} 
+        />
+      )}
     </section>
   );
 };

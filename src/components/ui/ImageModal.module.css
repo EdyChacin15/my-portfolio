@@ -1,0 +1,62 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.closeBtn, .navBtn {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+  z-index: 10;
+}
+
+.closeBtn:hover, .navBtn:hover {
+  color: var(--primary-red);
+}
+
+.closeBtn { top: -2.5rem; right: 0; }
+.navBtn { top: 50%; transform: translateY(-50%); }
+.prevBtn { left: -3.5rem; }
+.nextBtn { right: -3.5rem; }
+
+.counter {
+  position: absolute;
+  bottom: -2rem;
+  color: #a3a3a3;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -17,5 +17,6 @@ export interface CertificateType {
   provider: string;
   year: string;
   link?: string;
+  images?: string[];
   type: 'course' | 'trophy' | 'book';
 }

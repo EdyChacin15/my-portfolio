@@ -1,23 +1,30 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Menu, X } from 'lucide-react';
-import styles from './Navbar.module.css';
+
+import { useMobileMenu } from '../../hooks/useMobileMenu';
 import { useActiveSection } from '../../hooks/useActiveSection';
+import { useClickOutside } from '../../hooks/useClickOutside';
+import styles from './Navbar.module.css';
+
+const NAV_LINKS = [
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'certificates', label: 'Certificates' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' }
+];
+
+const SECTION_IDS = NAV_LINKS.map(link => link.id);
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, toggleMenu, closeMenu } = useMobileMenu();
+  const activeSection = useActiveSection(SECTION_IDS);
+  const menuRef = useRef<HTMLElement>(null);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  const activeSection = useActiveSection(['projects', 'skills', 'about', 'certificates', 'contact']);
+  useClickOutside(menuRef, closeMenu);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} ref={menuRef}>
       <nav className={styles.nav}>
         <a href="#" className={styles.logo} onClick={closeMenu}>
           EDYMAR<span>.</span>
@@ -26,47 +33,23 @@ const Navbar = () => {
         <button 
           className={styles.hamburgerBtn} 
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         <ul className={`${styles.linkList} ${isOpen ? styles.isOpen : ''}`}>
-          <li>
-            <a 
-              href="#projects" 
-              className={`${styles.link} ${activeSection === 'projects' ? styles.active : ''}`} 
-              onClick={closeMenu}
-            > Projects </a>
-          </li>
-          <li>
-            <a 
-              href="#skills" 
-              className={`${styles.link} ${activeSection === 'skills' ? styles.active : ''}`} 
-              onClick={closeMenu}
-            > Skills </a>
-          </li>
-          <li>
-            <a 
-              href="#about" 
-              className={`${styles.link} ${activeSection === 'about' ? styles.active : ''}`} 
-              onClick={closeMenu}
-            > About </a>
-          </li>
-          <li>
-            <a 
-              href="#certificates" 
-              className={`${styles.link} ${activeSection === 'certificates' ? styles.active : ''}`} 
-              onClick={closeMenu}
-            > Certificates </a>
-          </li>
-          <li>
-            <a 
-              href="#contact" 
-              className={`${styles.link} ${activeSection === 'contact' ? styles.active : ''}`} 
-              onClick={closeMenu}
-            > Contact </a>
-          </li>
+          {NAV_LINKS.map(({ id, label }) => (
+            <li key={id}>
+              <a 
+                href={`#${id}`} 
+                className={`${styles.link} ${activeSection === id ? styles.active : ''}`} 
+                onClick={closeMenu}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

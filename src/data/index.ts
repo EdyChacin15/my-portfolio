@@ -28,7 +28,7 @@ export const projectsData: ProjectType[] = [
 export const skillsData: SkillCategoryType[] = [
   {
     title: "Frontend",
-    skills: ["JavaScript (ES6+)", "React.js", "React DOM", "TypeScript", "HTML/CSS"],
+    skills: ["JavaScript (ES6+)", "React.js", "TypeScript", "HTML/CSS"],
   },
   {
     title: "Backend",
@@ -46,6 +46,7 @@ export const certificatesData: CertificateType[] = [
     provider: "Platzi",
     year: "2025",
     link: "https://platzi.com/@edychacin15/",
+    images: ["https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop"],
     type: "course"
   },
   {
@@ -53,6 +54,11 @@ export const certificatesData: CertificateType[] = [
     provider: "URBE University",
     year: "2025",
     link: "https://link-a-tu-certificado.com",
+    images: [
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=900&h=600&fit=crop",
+    ],
     type: "trophy"
   },
   {
