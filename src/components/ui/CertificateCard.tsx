@@ -2,13 +2,11 @@ import { Award, Trophy, BookOpen, ExternalLink } from "lucide-react";
 import type { CertificateType } from '../../types';
 import styles from './CertificateCard.module.css';
 
-// 1. AQUÍ ESTÁ LA CLAVE: Le decimos a TypeScript exactamente qué va a recibir
 interface CertificateCardProps {
   cert: CertificateType;
   onImageClick: (url: string) => void; 
 }
 
-// 2. Aquí usamos esa interfaz (CertificateCardProps)
 const CertificateCard = ({ cert, onImageClick }: CertificateCardProps) => {
   
   const getIcon = (type: string) => {
@@ -21,7 +19,6 @@ const CertificateCard = ({ cert, onImageClick }: CertificateCardProps) => {
 
   return (
     <div className={styles.certCard}>
-      {/* Usamos cert.images[0] porque ahora es un arreglo de galería */}
       {cert.images && cert.images.length > 0 && (
         <div 
           className={styles.imageWrapper} 
