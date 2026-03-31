@@ -51,8 +51,7 @@ export const projectsData: ProjectType[] = [
     description: "[2024] System for educational management. It handles user roles, enrollments, and billing. Built with Node.js, Express, MySQL, and JavaScript. It also generates PDF reports.",
     tags: ["Node.js", "Express", "MySQL", "JavaScript"],
     image: "/projects/centro-educativo.jpg",
-    github: "https://github.com/edychacin15/centro-educativo-c",
-    demo: "https://centro-educativo-c.vercel.app/home.html"
+    github: "https://github.com/edychacin15/centro-educativo-c"
   },
 ];
 
